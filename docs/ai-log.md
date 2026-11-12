@@ -13,3 +13,9 @@
 В рабочей области experiment авторизация SourceCraft подтверждена ответом в чате. В режиме Architect выполнены три вызова Context7. resolve-library-id нашёл /twbs/bootstrap. Два вызова query-docs по /twbs/bootstrap/v5.3.3 вернули рекомендации по частичным Sass-импортам и точечному подключению Collapse. В проекте проверены порядок functions, переопределения, variables, variables-dark, maps, mixins, компоненты и прямой импорт bootstrap/js/dist/collapse. Снимок итогового ответа приложен к отчету.
 
 Проверка документации webpack через Context7 и обращение к Pixso MCP остаются отдельными этапами. Адрес 127.0.0.1:3667 при повторной проверке не принимал соединение.
+
+## Проверка webpack
+
+В SourceCraft выполнены два вызова resolve-library-id для webpack и sass-loader, затем два query-docs для /websites/webpack_js. Проверены порядок выполнения загрузчиков справа налево и настройка filename в MiniCssExtractPlugin. В конфигурации проекта файл styles.css извлекается после Sass, PostCSS и css-loader. Снимок результата добавлен в отчёт.
+
+Pixso Desktop запущен, пользователь вошёл в аккаунт. В клиенте открыт раздел черновиков. Целевой макет доступен для просмотра в веб-интерфейсе. В локальном клиенте он ещё не открыт, и endpoint 127.0.0.1:3667 не принимает соединение.
