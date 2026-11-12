@@ -1,0 +1,5 @@
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, sans-serif; color: #172033; background: #f5f7fb; }
+.lab-page { padding-block: 48px; }
+.lab-title { margin: 0 0 24px; font-size: 2rem; }
+.grid-cell { padding: 24px; background: #e3eafd; border: 1px solid #a8bbed; }
