@@ -1,5 +1,14 @@
 *, *::before, *::after { box-sizing: border-box; }
-body { margin: 0; font-family: system-ui, sans-serif; color: #172033; background: #f5f7fb; }
-.lab-page { padding-block: 48px; }
-.lab-title { margin: 0 0 24px; font-size: 2rem; }
-.grid-cell { padding: 24px; background: #e3eafd; border: 1px solid #a8bbed; }
+body { margin: 0; background: #0e0a0a; color: #faf8f7; font-family: system-ui, sans-serif; }
+.lab-page { min-height: 100vh; padding-block: clamp(3rem, 10vw, 10rem); }
+.lab-title { text-align: center; margin: 0 0 3rem; font-size: clamp(1.85rem, 4vw, 3.1rem); font-weight: 550; }
+.lab-title span { color: #e8d854; }
+.accordion { max-width: 56rem; margin-inline: auto; }
+.accordion .accordion-item { border: 1px solid #3a3430; border-radius: .75rem; overflow: hidden; margin-bottom: .85rem; }
+.accordion .accordion-item .accordion-button { font: inherit; gap: 1rem; min-height: 4rem; border: 0; text-align: start; overflow-wrap: anywhere; }
+.accordion .accordion-button:not(.collapsed):not(:focus-visible) { box-shadow: none; }
+.accordion .accordion-button::after { background-image: none; transform: none; width: 1.25rem; height: auto; text-align: center; content: '+'; }
+.accordion .accordion-button:not(.collapsed)::after { background-image: none; content: '×'; }
+.accordion .accordion-button:focus-visible { outline: 2px solid #e8d854; outline-offset: -4px; }
+.accordion-body { line-height: 1.65; overflow-wrap: anywhere; }
+.accordion-item:has(.show) { background: #222020; }
