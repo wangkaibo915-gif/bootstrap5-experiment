@@ -1,5 +1,7 @@
+// Webfont for the Pixso FAQ design. Kept in SCSS because app/index.html is locked.
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600&display=swap");
+
 @import "bootstrap/scss/functions";
-@import "accordion-theme";
 @import "accordion-theme";
 @import "bootstrap/scss/variables";
 @import "bootstrap/scss/variables-dark";
@@ -7,8 +9,6 @@
 @import "bootstrap/scss/mixins";
 @import "bootstrap/scss/containers";
 @import "bootstrap/scss/grid";
-@import "bootstrap/scss/transitions";
-@import "bootstrap/scss/accordion";
 @import "bootstrap/scss/transitions";
 @import "bootstrap/scss/accordion";
 @import "page";

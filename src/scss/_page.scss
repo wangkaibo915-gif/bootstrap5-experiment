@@ -1,14 +1,106 @@
 *, *::before, *::after { box-sizing: border-box; }
-body { margin: 0; background: #0e0a0a; color: #faf8f7; font-family: system-ui, sans-serif; }
-.lab-page { min-height: 100vh; padding-block: clamp(3rem, 10vw, 10rem); }
-.lab-title { text-align: center; margin: 0 0 3rem; font-size: clamp(1.85rem, 4vw, 3.1rem); font-weight: 550; }
+
+body {
+  margin: 0;
+  background: #0e0808; // Pixso page background
+  color: #faf8f7;
+  font-family: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.lab-page {
+  min-height: 100vh;
+  padding-block: clamp(3rem, 10vw, 10rem);
+}
+
+.lab-title {
+  margin: 0 0 3rem;
+  text-align: center;
+  font-size: clamp(1.85rem, 4vw, 3.125rem);
+  font-weight: 500;
+  line-height: 1.32;
+}
+
 .lab-title span { color: #e8d854; }
-.accordion { max-width: 56rem; margin-inline: auto; }
-.accordion .accordion-item { border: 1px solid #3a3430; border-radius: .75rem; overflow: hidden; margin-bottom: .85rem; }
-.accordion .accordion-item .accordion-button { font: inherit; gap: 1rem; min-height: 4rem; border: 0; text-align: start; overflow-wrap: anywhere; }
-.accordion .accordion-button:not(.collapsed):not(:focus-visible) { box-shadow: none; }
-.accordion .accordion-button::after { background-image: none; transform: none; width: 1.25rem; height: auto; text-align: center; content: '+'; }
-.accordion .accordion-button:not(.collapsed)::after { background-image: none; content: '×'; }
-.accordion .accordion-button:focus-visible { outline: 2px solid #e8d854; outline-offset: -4px; }
-.accordion-body { line-height: 1.65; overflow-wrap: anywhere; }
-.accordion-item:has(.show) { background: #222020; }
+
+.accordion {
+  width: 100%;
+  max-width: 886px; // Pixso frame width
+  margin-inline: auto;
+  --bs-accordion-btn-icon-width: 2rem;
+}
+
+.accordion .accordion-item {
+  margin-bottom: 16px; // Pixso gap between cards
+  overflow: hidden;
+  border: 1px solid rgba(254, 232, 1, .22);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, .03);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+}
+
+// Bootstrap removes the shared top border between stacked items;
+// the design keeps a full 1px outline on every card.
+.accordion .accordion-item:not(:first-of-type) {
+  border-top: 1px solid rgba(254, 232, 1, .22);
+}
+
+.accordion .accordion-item:last-of-type { margin-bottom: 0; }
+
+.accordion .accordion-item:has(.accordion-collapse.show) {
+  background: #1c1a1a; // Pixso open state
+  box-shadow: 0 1px 12px rgba(255, 215, 0, .10);
+}
+
+.accordion .accordion-header { margin: 0; }
+
+.accordion .accordion-button {
+  min-height: 82px;
+  gap: 16px;
+  padding: 16px 24px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 1.5rem; // Nunito 24
+  font-weight: 500;
+  line-height: 1.35;
+  text-align: start;
+  overflow-wrap: anywhere;
+}
+
+.accordion .accordion-button:not(.collapsed) { box-shadow: none; }
+
+// Visible keyboard focus; inset so the rounded card does not clip it.
+.accordion .accordion-button:focus-visible {
+  outline: 2px solid #fee801;
+  outline-offset: -2px;
+  box-shadow: none;
+}
+
+.accordion .accordion-button:focus:not(:focus-visible) { box-shadow: none; }
+
+.accordion .accordion-body {
+  padding: 8px 24px 24px;
+  color: #a0a0a0; // Pixso answer text
+  font-size: 1.25rem; // Nunito 20
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 575.98px) {
+  .accordion { --bs-accordion-btn-icon-width: 1.75rem; }
+
+  .accordion .accordion-button {
+    min-height: 64px;
+    padding: 12px 16px;
+    font-size: 1.125rem;
+  }
+
+  .accordion .accordion-body {
+    padding: 4px 16px 20px;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+}
